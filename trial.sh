@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script auto create trial user SSH
 #yg akan expired setelah 1 hari
-#www.fawzya.net - 085799054816
+#Worm
 Login=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 masaaktif="1"
 Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
@@ -14,4 +14,4 @@ echo -e "Username: $Login "
 echo -e "Password: $Pass\n"
 echo -e ""
 echo -e "Akun ini hanya aktif 1 hari"
-echo -e "Script by \e[1;33;44mFawzya.Net\e[0m"
+echo -e "Script by \e[1;33;44mWorm\e[0m"
