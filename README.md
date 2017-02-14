@@ -1,7 +1,9 @@
 # worm
 auto script debian 7
 
-=  
+wget https://raw.githubusercontent.com/anggasa/worm/master/debian7.sh
+bash debian7.sh
+
 Autoscript Include:
 -------
 
