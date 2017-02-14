@@ -88,7 +88,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/anggasa/worm/master/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre><marquee behavior="alternate" onmouseover="this.stop()" onmouseout="this.start()"><a href="https://www.facebook.com/groups/1863177667292579/">Join Group FB Worm</a></marquee></pre>" > /home/vps/public_html/index.html
+echo "<pre>www.fb.com/groups/1863177667292579/</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/anggasa/worm/master/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
