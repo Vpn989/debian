@@ -1,7 +1,6 @@
 #!/bin/bash
 #Script auto create trial user SSH
 #yg akan expired setelah 1 hari
-#www.fawzya.net - 085799054816
 
 read -p "Username : " Login
 read -p "Password : " Pass
@@ -15,10 +14,11 @@ echo -e ""
 echo -e "Informasi SSH"
 echo -e "=========-account-=========="
 echo -e "Host: $IP" 
-echo -e "Port: 443,143,80"
+echo -e "OpenSSH  Port: 22,143"
+echo -e "Dropbear Port: 443,110,2017"
 echo -e "Username: $Login "
 echo -e "Password: $Pass"
 echo -e "-----------------------------"
 echo -e "Aktif Sampai: $exp"
 echo -e "==========================="
-echo -e "Script by \e[1;33;44mFawzya.Net\e[0m"
+echo -e "Script by \e[1;33;44mWorm\e[0m"
