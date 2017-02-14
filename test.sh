@@ -13,6 +13,7 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 echo "OS = $OS";
 echo "MYIP = $MYIP";
 echo "MYIP2 = $MYIP2";
+echo "Script By \e[1;33;44mWorm\e[0m"
 
 
 #=========
