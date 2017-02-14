@@ -44,7 +44,7 @@ if [ -e /etc/openvpn/server.conf ]; then
 	done
 else
 	echo 'Selamat Datang di quick OpenVPN installer'
-	echo "Dimodifikasi oleh www.fornesia.com"
+	echo "Dimodifikasi oleh Worm Group"
 	echo ""
 	# OpenVPN setup and first user creation
 	echo "1st alamat IPv4 yang ingin diinstall OpenVPN"
@@ -214,6 +214,6 @@ fi
 	clear
 
 echo ""
-echo "OpenVPN sudah terinstall http://$MYIP:81/client.tar atau /root/client.tar"
+echo "OpenVPN sudah terinstall http://$MYIP:82/client.tar atau /root/client.tar"
 echo "Auto Script BY :Worm"
 echo ""
