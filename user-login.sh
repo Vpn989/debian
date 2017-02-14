@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script Copyright www.fornesia.com
+# Script Copyright Worm
 # ==========================
 # 
 
@@ -64,4 +64,4 @@ echo "------------------------------------------------"
 
 echo "";
 
-echo "www.fornesia.com";
+echo "Script By \e[1;33;44mWorm\e[0m"
