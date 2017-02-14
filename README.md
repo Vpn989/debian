@@ -12,10 +12,10 @@ Autoscript Include:
 Service
 -------
 OpenSSH : 22, 143  
-Dropbear : 443, 110, 109  
+Dropbear : 443, 110,2017  
 Squid3 : 80, 8080 (limit to IP SSH)  
 badvpn : badvpn-udpgw port 7300  
-nginx : 81  
+nginx : 82  
 
 Tools
 -----
