@@ -225,6 +225,8 @@ service vnstat restart
 
 # download script
 cd
+wget -O create-user.sh "https://raw.githubusercontent.com/anggasa/worm/master/create-user.sh"
+wget -O trial.sh "https://raw.githubusercontent.com/anggasa/worm/master/trial.sh"
 wget -O speedtest_cli.py "https://raw.githubusercontent.com/anggasa/worm/master/speedtest_cli.py"
 wget -O bench-network.sh "https://raw.githubusercontent.com/anggasa/worm/master/bench-network.sh"
 wget -O ps_mem.py "https://raw.githubusercontent.com/anggasa/worm/master/ps_mem.py"
@@ -247,7 +249,11 @@ chmod +x user-expired.sh
 #chmod +x userlimit.sh
 chmod +x dropmon
 chmod +x user-list.sh
-
+#chmod +x create-user.sh
+cp /root/create-user.sh /usr/bin/usernew
+chmod +x /usr/bin/usernew
+#chmod +x trial.sh
+chmod +x trial
 # finishing
 chown -R www-data:www-data /home/vps/public_html
 service cron restart
