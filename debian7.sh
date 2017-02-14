@@ -84,14 +84,19 @@ echo "screenfetch-dev" >> .profile
 
 # install webserver
 cd
+apt-get install nginx php5 php5-fpm php5-cli php5-mysql php5-mcrypt
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/anggasa/worm/master/nginx.conf"
-mkdir -p /home/vps/public_html
-echo "<pre>www.fb.com/groups/1863177667292579/</pre>" > /home/vps/public_html/index.html
-echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/anggasa/worm/master/vps.conf"
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.old
+curl https://raw.githubusercontent.com/anggasa/worm/master/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/anggasa/worm/master/vps.conf > /etc/nginx/conf.d/vps.conf
+sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
+useradd -m vps
+mkdir -p /home/vps/public_html
+echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
+chown -R www-data:www-data /home/vps/public_html
+chmod -R g+rw /home/vps/public_html
 service php5-fpm restart
 service nginx restart
 
@@ -272,7 +277,7 @@ echo "Squid3    : 80, 8080 (limit to IP SSH)"  | tee -a log-install.txt
 #echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:82/client.ovpn)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 #echo "PPTP VPN  : Create User via Putty (echo "username pptpd password *" >> /etc/ppp/chap-secrets)"  | tee -a log-install.txt
-echo "nginx    : 82"  | tee -a log-install.txt
+echo "nginx    : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
 echo "-----"  | tee -a log-install.txt
@@ -292,8 +297,8 @@ echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "vnstat   : http://$MYIP:82/vnstat/ (Cek Bandwith)"  | tee -a log-install.txt
-echo "MRTG     : http://$MYIP:82/mrtg/"  | tee -a log-install.txt
+echo "vnstat   : http://$MYIP:81/vnstat/ (Cek Bandwith)"  | tee -a log-install.txt
+echo "MRTG     : http://$MYIP:81/mrtg/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
