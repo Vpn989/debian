@@ -4,8 +4,8 @@
 # April 2, 2013 v1.11
 # http://www.putdispenserhere.com/pptp-debian-ubuntu-openvz-setup-script/
 
-u="fornesia"
-p="freak"
+u="worm"
+p="worm"
 
 # get the VPS IP
 ip=`ifconfig venet0:0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
