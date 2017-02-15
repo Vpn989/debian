@@ -33,4 +33,4 @@ do
         fi
 done
 echo "-------------------------------"
-echo -e "Script by \e[1;33;44m Worm \e[0m"
+echo "Powered By \e[1;33;44m Worm \e[0m"
