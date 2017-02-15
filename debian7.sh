@@ -244,7 +244,9 @@ echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x bench-network.sh
 chmod +x speedtest_cli.py
 chmod +x ps_mem.py
+#chmod +x user-login.sh
 chmod +x user-login.sh
+#chmod +x user-expired.sh
 chmod +x user-expired.sh
 #chmod +x userlimit.sh
 chmod +x dropmon
@@ -314,7 +316,14 @@ echo "Join Group FB:https://www.facebook.com/groups/1863177667292579/"  | tee -a
 echo ""  | tee -a log-install.txt
 echo "Log Instalasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
+echo "INCLUDE EASY SCRIPT"  | tee -a log-install.txt
 echo "VPS AUTO REBOOT TIAP 12 JAM, SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
+echo "./ps_mem.py (Cek RAM)"  | tee -a log-install.txt
+echo "./bench-network.sh (Cek Kualitas VPS))"  | tee -a log-install.txt
+echo "./user-login.sh (Monitoring User Login"  | tee -a log-install.txt
+echo "./user-expired.sh (Auto Lock User Expire tiap jam 00:00)"  | tee -a log-install.txt
+echo "./user-list.sh (Melihat Daftar User)"  | tee -a log-install.txt
+echo "sh dropmon [port] contoh: sh dropmon 443"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==========================================="  | tee -a log-install.txt
 cd
