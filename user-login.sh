@@ -64,4 +64,4 @@ echo "------------------------------------------------"
 
 echo "";
 
-echo "Powered By \e[1;33;44m Worm \e[0m"
+echo "Powered By Worm
