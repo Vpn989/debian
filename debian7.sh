@@ -99,7 +99,8 @@ chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 service php5-fpm restart
 service nginx restart
-
+# install libssh2-php
+apt-get install libssh2-php
 # install openvpn
 #wget -O /etc/openvpn/openvpn.tar "https://github.com/anggasa/worm/raw/master/openvpn-debian.tar"
 #cd /etc/openvpn/
