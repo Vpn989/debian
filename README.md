@@ -30,6 +30,8 @@ screenfetch
 ./user-login.sh (Monitoring User Login)  
 ./user-expired.sh (Auto Lock User Expire tiap jam 00:00)  
 ./user-list.sh (Melihat Daftar User)  
+./userlimit.sh 1 (max login 1 akun ssh)
+./userlimit.sh 2 (max login 2 akun ssh)
 sh dropmon [port] contoh: sh dropmon 443  
 
 Fitur lain
