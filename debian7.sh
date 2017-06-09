@@ -99,32 +99,32 @@ service nginx restart
 # install libssh2-php
 apt-get install libssh2-php
 # install openvpn
-#wget -O /etc/openvpn/openvpn.tar "https://github.com/anggasa/worm/raw/master/openvpn-debian.tar"
-#cd /etc/openvpn/
-#tar xf openvpn.tar
-#wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/anggasa/worm/master/1194.conf"
-#service openvpn restart
-#sysctl -w net.ipv4.ip_forward=1
-#sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-#wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/anggasa/worm/master/iptables.up.rules"
-#sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-#sed -i $MYIP2 /etc/iptables.up.rules;
-#iptables-restore < /etc/iptables.up.rules
-#service openvpn restart
+wget -O /etc/openvpn/openvpn.tar "https://github.com/anggasa/worm/raw/master/openvpn-debian.tar"
+cd /etc/openvpn/
+tar xf openvpn.tar
+wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/anggasa/worm/master/1194.conf"
+service openvpn restart
+sysctl -w net.ipv4.ip_forward=1
+sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/anggasa/worm/master/iptables.up.rules"
+sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
+sed -i $MYIP2 /etc/iptables.up.rules;
+iptables-restore < /etc/iptables.up.rules
+service openvpn restart
 
 # configure openvpn client config
-#cd /etc/openvpn/
-#wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/anggasa/worm/master/1194-client.conf"
-#sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+cd /etc/openvpn/
+wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/anggasa/worm/master/1194-client.conf"
+sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false worm
-echo "worm:$PASS" | chpasswd
-#echo "username" >> pass.txt
-#echo "password" >> pass.txt
-#tar cf client.tar 1194-client.ovpn pass.txt
-#cp client.tar /home/vps/public_html/
-#cp 1194-client.ovpn client.ovpn
-#cp client.ovpn /home/vps/public_html/
+echo "135040027:$PASS" | chpasswd
+echo "username" >> pass.txt
+echo "password" >> pass.txt
+tar cf client.tar 1194-client.ovpn pass.txt
+cp client.tar /home/vps/public_html/
+cp 1194-client.ovpn client.ovpn
+cp client.ovpn /home/vps/public_html/
 cd
 
 # install badvpn
@@ -217,9 +217,9 @@ service webmin restart
 service vnstat restart
 
 # install pptp vpn
-#wget https://raw.githubusercontent.com/anggasa/worm/master/pptpinstall.sh
-#chmod +x pptpinstall.sh
-#./pptpinstall.sh
+wget https://raw.githubusercontent.com/anggasa/worm/master/pptpinstall.sh
+chmod +x pptpinstall.sh
+./pptpinstall.sh
 
 # download script
 cd
@@ -262,7 +262,7 @@ service cron restart
 service nginx start
 service php-fpm start
 service vnstat restart
-#service openvpn restart
+service openvpn restart
 service snmpd restart
 service ssh restart
 service dropbear restart
@@ -282,9 +282,9 @@ echo "-------"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 443, 110, 2017"  | tee -a log-install.txt
 echo "Squid3    : 80, 8080 (limit to IP SSH)"  | tee -a log-install.txt
-#echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
-#echo "PPTP VPN  : Create User via Putty (echo "username pptpd password *" >> /etc/ppp/chap-secrets)"  | tee -a log-install.txt
+echo "PPTP VPN  : Create User via Putty (echo "username pptpd password *" >> /etc/ppp/chap-secrets)"  | tee -a log-install.txt
 echo "nginx    : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
